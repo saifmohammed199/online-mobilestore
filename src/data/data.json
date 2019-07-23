@@ -1,0 +1,23 @@
+const data =    {
+    "name":"lenovo",
+    "description":"lenovo vibe k5+ has latest features, 2gb ram with 32gb internal memory"
+    }
+    {
+        "name":"MI",
+        "description":"note 4 has latest features, 2gb ram with 32gb internal memory"
+    },
+    {
+        "name":"Samsung",
+        "description":"A20 has latest features, 2gb ram with 32gb internal memory"
+    },
+    {
+        "name":"Moto",
+        "description":"Moto G has latest features, 2gb ram with 32gb internal memory"
+    },
+    {
+        "name":"Nokia",
+        "description":"Nokia 7 has latest features, 2gb ram with 32gb internal memory"
+    }
+]
+
+

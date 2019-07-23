@@ -29,24 +29,11 @@ const data =  [  {
         description:"Nokia 7 has latest features, 2gb ram with 32gb internal memory"
     }
 ]
-let purchaicedId=[
 
-]//const data =Data.items;
 class Home extends Component {
-//     constructor(props){
-//         super(props)
-//         this.state={
-//             items:[],
-//             loading:false
-//         }
-//     }
-// componentDidMount(){
-//     this.setState({
-//         items:Data.items
-//     })
-// }
-addToCart=(id)=>{
-purchaicedId.push(id)
+
+haldleClick=()=>{
+    this.props.history.push("/purchase");
 }
 
     render() {
@@ -58,10 +45,9 @@ purchaicedId.push(id)
                 <h1>{dataValue.name}</h1>
                 <p>{dataValue.description}</p>
                 <a className="f6 link dim ph3 pv2 mb2 dib white bg-dark-blue m3" href="#0" onClick={()=>{this.addToCart(dataValue.id)}}>Add to Cart</a>
+                <button className="f6 link dim ph3 pv2 mb2 dib white bg-dark-blue m3" onClick={this.haldleClick}>Purchase Now</button>
                 </div>
                 )}
-                <Cart items={purchaicedId}/>
-                
             </div>
         )
     }

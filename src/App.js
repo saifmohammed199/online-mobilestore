@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import './App.css';
 import Navbar from './components/nav'
 import 'tachyons'
@@ -8,19 +8,65 @@ import {Switch} from 'react-router-dom'
 import Cart from './components/cart'
 import Home from './components/home'
 import Purchase from './components/purchase'
-function App() {
+
+const data =  [  {
+  id:1,
+  name:"lenovo",
+  description:"lenovo vibe k5+ has latest features, 2gb ram with 32gb internal memory"
+  },
+  {
+      id:2,
+      name:"MI",
+      description:"note 4 has latest features, 2gb ram with 32gb internal memory"
+  },
+  {
+      id:3,
+      name:"Samsung",
+      description:"A20 has latest features, 2gb ram with 32gb internal memory"
+  },
+  {
+      id:4,
+      name:"Moto",
+      description:"Moto G has latest features, 2gb ram with 32gb internal memory"
+  },
+  {
+      id:5,
+      name:"Nokia",
+      description:"Nokia 7 has latest features, 2gb ram with 32gb internal memory"
+  }
+]
+class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+        data:data,
+        purchaseItems:[]
+    }
+}
+handler(D){
+  console.log(D)
+//this.setState({purchaseItems:D})
+}
+// purchaseItems(){
+//   this.setState({purchaseItemspurchaseItems})
+// }
+  render(){
+    const {data}=this.state
   return (
     <div className="App">
       <Router>
       <Navbar/>
+      <Home data={data} action={this.handler}/>
       <Switch>
-      <Route component={Home} exact path={'/home'}/>
-      <Route component={Cart} path={'/cart'}/>
+      {/* <Route component={Home}data={data} exact path={'/home'}/> */}
+      <Route component={Cart}  path={'/cart'}/>
        <Route component={Purchase} path={'/purchase'}/>
        </Switch>
       </Router>
     </div>
   );
+  }
 }
 
 export default App;

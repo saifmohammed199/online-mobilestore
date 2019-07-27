@@ -44,27 +44,28 @@ class App extends Component {
         purchaseItems:""
     }
 }
-handler(){
- // console.log(D)
-this.setState({
-  purchaseItems:"WELCOME"
-})
+handler(D){
+//  console.log(D)
+this.setState(()=>{return {purchaseItems:D}},()=>{console.log(this.state)})
+ console.log(this.purchaseItems)
 }
 // purchaseItems(){
 //   this.setState({purchaseItemspurchaseItems})
 // }
 
   render(){
-    const {data}=this.state
+    const {data,purchaseItems}=this.state
   return (
     <div className="App">
       <Router>
       <Navbar/>
       <Home data={data} action={this.handler}/>
+      <Purchase purchaseItems={this.state.purchaseItems}/>
+      <Cart purchaseItems={purchaseItems}/>
       <Switch>
       {/* <Route component={Home}data={data} exact path={'/home'}/> */}
       <Route component={Cart}  path={'/cart'}/>
-       <Route component={Purchase} path={'/purchase'}/>
+       {/* <Route component={Purchase} path={'/purchase'}/> */}
        </Switch>
       </Router>
     </div>

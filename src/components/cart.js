@@ -1,12 +1,17 @@
 import React,{Component} from 'react'
 
 class Cart extends Component{
+//    constructor(props){
+//        super(props);
+//        this.state={
+//            counter:0
+//        }
+//    }
     
     render(){
         return(
             <div>
-               <p>hello</p>
-               <h1>welcome</h1>
+            <p>your in cart{console.log(this.props.purchaseItems)}</p>
             </div>
         )
         

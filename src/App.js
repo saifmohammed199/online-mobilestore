@@ -41,16 +41,19 @@ class App extends Component {
     super(props);
     this.state={
         data:data,
-        purchaseItems:[]
+        purchaseItems:""
     }
 }
-handler(D){
-  console.log(D)
-//this.setState({purchaseItems:D})
+handler(){
+ // console.log(D)
+this.setState({
+  purchaseItems:"WELCOME"
+})
 }
 // purchaseItems(){
 //   this.setState({purchaseItemspurchaseItems})
 // }
+
   render(){
     const {data}=this.state
   return (

@@ -29,7 +29,7 @@ class Home extends Component {
                 className="f6 link dim ph3 pv2 mb2 dib white bg-dark-blue m3">Add to Cart</Link>
                 <Link to='/purchase' 
                 className="f6 ma1 link dim ph3 pv2 mb2 dib white bg-dark-blue m3"
-                onClick={this.props.action.bind(this,dataValue)}>Purchase Now</Link>
+                onClick={(data)=>this.props.action(dataValue)}>Purchase Now</Link>
                 </div>
                 )}
             </div>

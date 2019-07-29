@@ -1,23 +1,11 @@
 import React, { Component } from 'react'
-import Cart from './cart'
 import {Link} from 'react-router-dom'
 
 
 
 class Home extends Component {
-
-    // constructor(props){
-    //     super(props);
-        
-    // }
-//    handler(dataValue){
-//         this.setState.purchaseItems.push(dataValue)
-//         console.log(this.state.purchaseItems)
-//     }
     render(props) {
         let data=this.props.data
-      //  let action=this.props.action
-    //console.log(data)
         return (
             <div className="flex flex-wrap">
                 

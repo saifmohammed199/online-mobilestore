@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './App.css'
 import Navbar from './components/nav'
 import 'tachyons'
-import Root from './components/root'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Switch } from 'react-router-dom'
 import Cart from './components/cart'
@@ -49,8 +48,6 @@ class App extends Component {
     }
   }
   handler = (purchaseItem) => {
-     console.log("handler ", purchaseItem);
-
     this.setState({
       purchaseItems: [
         ...this.state.purchaseItems,
@@ -60,18 +57,14 @@ class App extends Component {
   }
   render () {
     const { data, purchaseItems } = this.state
-    console.log("render ", purchaseItems);
     return (
       <div className='App'>
         <Router>
-          <Navbar />
-          <Home data={data} action={this.handler} />
-          <Purchase purchaseItems={purchaseItems} />
-          <Cart purchaseItems={purchaseItems} />
+         <Navbar/>
           <Switch>
-            {/* <Route component={Home}data={data} exact path={'/home'}/> */}
-            <Route component={Cart} path={'/cart'} />
-            {/* <Route component={Purchase} path={'/purchase'}/> */}
+            <Route exact path='/home' render={(props) => <Home data={data} action={this.handler}/>}/>
+            <Route path='/cart' render={(props)=><Cart purchaseItems={purchaseItems}/>} /> 
+            <Route path='/purchase' render={(props)=><Purchase purchaseItems={purchaseItems}/>}/>
           </Switch>
         </Router>
       </div>

@@ -10,7 +10,7 @@ class Home extends Component {
             <div className="flex flex-wrap">
                 
                 {data.map((dataValue)=>                
-                <div className=" br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l pd3 ma4 mw5">
+                <div key={dataValue.id} className=" br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l pd3 ma4 mw5">
                 <h1>{dataValue.name}</h1>
                 <p>{dataValue.description}</p>
                 <Link to="/cart" 

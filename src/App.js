@@ -7,6 +7,7 @@ import { Switch } from 'react-router-dom'
 import Cart from './components/cart'
 import Home from './components/home'
 import Purchase from './components/purchase'
+import Signin from './components/signin';
 
 const data = [
   {
@@ -65,6 +66,7 @@ class App extends Component {
             <Route exact path='/home' render={(props) => <Home data={data} action={this.handler}  />}/>
             <Route path='/cart' render={(props)=><Cart purchaseItems={purchaseItems}/>} /> 
             <Route path='/purchase' render={(props)=><Purchase purchaseItems={purchaseItems}/>}/>
+            <Route path='/signin' component={Signin} />
           </Switch>
         </Router>
       </div>

@@ -64,7 +64,7 @@ class App extends Component {
          <Navbar/>
           <Switch>
             <Route exact path='/home' render={(props) => <Home data={data} action={this.handler}  />}/>
-            <Route path='/cart' render={(props)=><Cart purchaseItems={purchaseItems}/>} /> 
+            <Route path='/cart' render={(props)=><Cart purchaseItems={purchaseItems} action={this.handler}/>} /> 
             <Route path='/purchase' render={(props)=><Purchase purchaseItems={purchaseItems}/>}/>
             <Route path='/signin' component={Signin} />
           </Switch>

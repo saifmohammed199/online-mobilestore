@@ -24,6 +24,7 @@ class Home extends Component {
             <Link
               to='/cart'
               className='f6 link dim ph3 pv2 mb2 dib white bg-dark-blue m3'
+              onClick={(data)=>this.props.action(dataValue)}
             >
               Add to Cart
             </Link>

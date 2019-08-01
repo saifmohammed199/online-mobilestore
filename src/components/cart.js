@@ -1,12 +1,32 @@
 import React,{Component} from 'react'
 
+
 class Cart extends Component{
     
     render(){
         return(
             <div>
-            {/* <p>your in cart {this.props.purchaseItems.length > 0 && this.props.purchaseItems[0].name}</p> */}
-            <p>{this.props.purchaseItems.map((items)=><p>{items.name}</p>)}</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+            <tbody>{this.props.purchaseItems.map((items)=>(
+            <tr>
+                <td>{items.name}</td>
+                <td>{items.description}</td>
+                <td>{items.amount}</td>
+            </tr>
+            ))}
+            <tr>
+                <td>Total</td>
+                <td>{}</td>
+            </tr>
+            </tbody>
+            </table>
             </div>
         )
     }

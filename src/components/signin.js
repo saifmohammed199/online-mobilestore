@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
+ 
 export default class Signin extends Component {
+  onRouteChange=()=>{
+    this.props.history.push('/home')
+}
   render () {
     return (
       <div>
@@ -33,6 +37,7 @@ export default class Signin extends Component {
             </fieldset>
             <div className=''>
               <input
+                onClick={this.onRouteChange}
                 className='b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib'
                 type='submit'
                 value='Sign in'

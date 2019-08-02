@@ -14,30 +14,35 @@ const data = [
     id: 1,
     name: 'lenovo',
     description:
-      'lenovo vibe k5+ has latest features, 2gb ram with 32gb internal memory'
+      'lenovo vibe k5+ has latest features, 2gb ram with 32gb internal memory',
+    amount:7999
   },
   {
     id: 2,
     name: 'MI',
     description:
-      'note 4 has latest features, 2gb ram with 32gb internal memory'
+      'note 4 has latest features, 2gb ram with 32gb internal memory',
+    amount:10499
   },
   {
     id: 3,
     name: 'Samsung',
-    description: 'A20 has latest features, 2gb ram with 32gb internal memory'
+    description: 'A20 has latest features, 2gb ram with 32gb internal memory',
+    amount:12499
   },
   {
     id: 4,
     name: 'Moto',
     description:
-      'Moto G has latest features, 2gb ram with 32gb internal memory'
+      'Moto G has latest features, 2gb ram with 32gb internal memory',
+    amount:25999
   },
   {
     id: 5,
     name: 'Nokia',
     description:
-      'Nokia 7 has latest features, 2gb ram with 32gb internal memory'
+      'Nokia 7 has latest features, 2gb ram with 32gb internal memory',
+    amount:14999
   }
 ]
 class App extends Component {
@@ -64,7 +69,7 @@ class App extends Component {
          <Navbar/>
           <Switch>
             <Route exact path='/home' render={(props) => <Home data={data} action={this.handler}  />}/>
-            <Route path='/cart' render={(props)=><Cart purchaseItems={purchaseItems}/>} /> 
+            <Route path='/cart' render={(props)=><Cart purchaseItems={purchaseItems} action={this.handler}/>} /> 
             <Route path='/purchase' render={(props)=><Purchase purchaseItems={purchaseItems}/>}/>
             <Route path='/signin' component={Signin} />
           </Switch>

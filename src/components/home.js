@@ -3,9 +3,11 @@ import { Link, withRouter } from 'react-router-dom'
 
 class Home extends Component {
   onClickPurchase = dataValue => {
-    if (false) {
+    if ('') {
+      console.log('clocled')
       this.props.action(dataValue)
     } else {
+      console.log('not working')
       this.props.history.push('/signin')
     }
   }

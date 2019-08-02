@@ -2,16 +2,7 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 class Home extends Component {
-  onClickPurchase = dataValue => {
-    if ('') {
-      console.log('clocled')
-      this.props.action(dataValue)
-    } else {
-      console.log('not working')
-      this.props.history.push('/signin')
-    }
-  }
-  render (props) {
+   render (props) {
     let data = this.props.data
 
     return (
@@ -30,13 +21,13 @@ class Home extends Component {
             >
               Add to Cart
             </Link>
-            <button
+            <Link
               to='/purchase'
               className='f6 ma1 link dim ph3 pv2 mb2 dib white bg-dark-blue m3'
-              onClick={data => this.onClickPurchase(dataValue)}
+              onClick={(data) => this.props.action(dataValue)}
             >
               Purchase Now
-            </button>
+            </Link>
           </div>
         ))}
       </div>

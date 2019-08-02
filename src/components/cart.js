@@ -1,20 +1,14 @@
 import React,{Component} from 'react'
 
 class Cart extends Component{
-//    constructor(props){
-//        super(props);
-//        this.state={
-//            counter:0
-//        }
-//    }
     
     render(){
         return(
             <div>
-            <p>your in cart{console.log(this.props.purchaseItems)}</p>
+            {/* <p>your in cart {this.props.purchaseItems.length > 0 && this.props.purchaseItems[0].name}</p> */}
+            <p>{this.props.purchaseItems.map((items)=><p>{items.name}</p>)}</p>
             </div>
         )
-        
     }
 }
 

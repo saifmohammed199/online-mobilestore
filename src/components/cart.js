@@ -18,7 +18,7 @@ class Cart extends Component {
           </thead>
           <tbody>
             {this.props.purchaseItems.map(items => (
-              <tr>
+              <tr key={items.id}>
                 <td>{items.name}</td>
                 <td>{items.description}</td>
                 <td>{items.amount}</td>

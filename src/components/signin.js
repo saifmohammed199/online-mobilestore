@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 
- 
 export default class Signin extends Component {
-  onRouteChange=()=>{
+  onRouteChange = () => {
     this.props.history.push('/purchase')
-}
+  }
   render () {
     return (
       <div>

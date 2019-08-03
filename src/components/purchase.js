@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Purchase extends Component {
   render () {
@@ -17,7 +18,7 @@ class Purchase extends Component {
           </thead>
           <tbody>
             {this.props.purchaseItems.map(items => (
-              <tr>
+              <tr key={items.id}>
                 <td>{items.name}</td>
                 <td>{items.description}</td>
                 <td>{items.amount}</td>
@@ -56,14 +57,14 @@ class Purchase extends Component {
               type='number'
             />
 
-            <div class='pa4'>
-              <fieldset id='favorite_movies' class='bn'>
-                <legend class='fw7 mb2'>Select Payment Method</legend>
-                  <div class='flex items-center mb2'>
+            <div className='pa4'>
+              <fieldset id='favorite_movies' className='bn'>
+                <legend className='fw7 mb2'>Select Payment Method</legend>
+                  <div className='flex items-center mb2'>
                     <input type="radio" name="indoor-outdoor"/>
                     <label> Cash On Delevery</label>
                   </div>
-                  <div class='flex items-center mb2'>
+                  <div className='flex items-center mb2'>
                     <input type="radio" name="indoor-outdoor"/>
                     <label> Online</label>
                   </div>
@@ -71,7 +72,8 @@ class Purchase extends Component {
             </div>
           </div>
         </form>
-        <button>Next</button>
+        <Link className='f6 ma1 link dim ph3 pv2 mb2 dib white bg-dark-blue m3'
+         to="/responce">Order Now</Link>
       </div>
     )
   }

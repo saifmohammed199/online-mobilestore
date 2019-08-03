@@ -3,7 +3,7 @@ import React, { Component } from 'react'
  
 export default class Signin extends Component {
   onRouteChange=()=>{
-    this.props.history.push('/home')
+    this.props.history.push('/purchase')
 }
   render () {
     return (

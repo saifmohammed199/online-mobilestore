@@ -50,7 +50,8 @@ class App extends Component {
     super(props)
     this.state = {
       data: data,
-      purchaseItems: []
+      purchaseItems: [],
+      signin:false
     }
   }
   handler = (purchaseItem) => {
@@ -68,7 +69,7 @@ class App extends Component {
         <Router>
          <Navbar/>
           <Switch>
-            <Route exact path='/home' render={(props) => <Home data={data} action={this.handler}  />}/>
+            <Route exact path='/home' render={(props) => <Home data={data} action={this.handler} signin={this.state.signin}  />}/>
             <Route path='/cart' render={(props)=><Cart purchaseItems={purchaseItems} action={this.handler}/>} /> 
             <Route path='/purchase' render={(props)=><Purchase purchaseItems={purchaseItems}/>}/>
             <Route path='/signin' component={Signin} />

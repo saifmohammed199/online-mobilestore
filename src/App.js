@@ -55,6 +55,11 @@ class App extends Component {
       signin: false
     }
   }
+  componentDidMount(){
+    fetch('http://localhost:3000/')
+    .then(response=>response.json())
+    .then()
+  }
   handler = purchaseItem => {
     this.setState({
       purchaseItems: [...this.state.purchaseItems, purchaseItem]
